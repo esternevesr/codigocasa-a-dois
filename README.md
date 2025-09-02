@@ -367,181 +367,15 @@
             background: var(--primary);
             color: var(--bg-white);
             border: none;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
+            padding: 12px 16px;
+            border-radius: 8px;
             cursor: pointer;
             position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 0;
-            }
-
-            .container {
-                border-radius: 0;
-                min-height: 100vh;
-            }
-
-            .tabs {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 280px;
-                height: 100%;
-                background: var(--bg-white);
-                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-            }
-
-            .tabs.active {
-                display: flex;
-                transform: translateX(0);
-            }
-
-            .tab {
-                padding: 1.5rem;
-                border-bottom: 1px solid #e5e7eb;
-                text-align: left;
-                font-size: 1.1rem;
-            }
-
-            .sidebar-toggle {
-                display: block;
-            }
-
-            .header {
-                padding: 1.5rem 1rem;
-                margin-top: 0;
-            }
-
-            .header h1 {
-                font-size: 1.5rem;
-            }
-
-            .header p {
-                font-size: 1rem;
-            }
-
-            .content {
-                padding: 1rem;
-            }
-
-            .couple-setup, .tasks-grid, .summary-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .partner {
-                padding: 1rem;
-            }
-
-            .task-category {
-                padding: 1rem;
-            }
-
-            .task-item {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0.75rem;
-                padding: 0.75rem;
-            }
-
-            .task-item span {
-                text-align: center;
-                font-weight: 500;
-            }
-
-            .task-controls {
-                justify-content: center;
-                gap: 0.75rem;
-                flex-wrap: wrap;
-            }
-
-            .assign-btn {
-                flex: 1;
-                min-width: 60px;
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-
-            .navigation-buttons {
-                flex-direction: column;
-                gap: 0.75rem;
-                margin-top: 1.5rem;
-            }
-
-            .nav-btn {
-                width: 100%;
-                padding: 1rem;
-                font-size: 1rem;
-            }
-
-            .summary-card {
-                padding: 1rem;
-            }
-
-            .ritual-item {
-                padding: 1rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .ritual-item h4 {
-                font-size: 1rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .ritual-item p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 1rem;
-            }
-
-            .content {
-                padding: 0.75rem;
-            }
-
-            .task-item {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
-
-            .assign-btn {
-                padding: 0.5rem;
-                font-size: 0.8rem;
-                min-width: 50px;
-            }
-
-            .task-controls {
-                gap: 0.5rem;
-            }
-
-            .partner input {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
-
-            .custom-task-input {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
-
-            .summary-card .count {
-                font-size: 1.5rem;
-            }
+            top: 16px;
+            right: 16px;
+            z-index: 1001;
+            font-size: 18px;
+            box-shadow: var(--shadow);
         }
 
         /* Overlay for mobile menu */
@@ -560,10 +394,282 @@
             display: block;
         }
 
-        /* Better touch targets */
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .tasks-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .couple-setup {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* Mobile styles */
         @media (max-width: 768px) {
-            .tab, .assign-btn, .nav-btn, .add-task-btn {
+            body {
+                padding: 0;
+                font-size: 16px;
+            }
+
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
+            .tabs {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 85vw;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--bg-white);
+                box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .tabs.active {
+                display: flex;
+                transform: translateX(0);
+            }
+
+            .tab {
+                padding: 20px;
+                border-bottom: 1px solid #e5e7eb;
+                text-align: left;
+                font-size: 16px;
+                white-space: normal;
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+            }
+
+            .tab:hover, .tab:focus {
+                background: #f8fafc;
+            }
+
+            .header {
+                padding: 80px 20px 20px 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+                line-height: 1.2;
+            }
+
+            .header p {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 20px 16px;
+            }
+
+            .couple-setup {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .partner {
+                padding: 16px;
+            }
+
+            .partner h3 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            .partner input {
+                padding: 12px;
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .tasks-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 16px;
+            }
+
+            .task-category {
+                padding: 16px;
+            }
+
+            .task-category h4 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .task-item {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 12px;
+                margin-bottom: 12px;
+            }
+
+            .task-item span {
+                text-align: center;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.4;
+            }
+
+            .task-controls {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 60px;
+                gap: 8px;
+                width: 100%;
+            }
+
+            .assign-btn {
+                padding: 12px 8px;
+                font-size: 12px;
+                font-weight: 600;
                 min-height: 44px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .assign-btn.clear {
+                font-size: 16px;
+            }
+
+            .custom-task-input {
+                padding: 12px;
+                font-size: 16px;
+                margin-top: 12px;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .nav-btn, .add-task-btn {
+                width: 100%;
+                padding: 16px;
+                font-size: 16px;
+                min-height: 50px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .summary-card {
+                padding: 16px;
+                text-align: center;
+            }
+
+            .summary-card h4 {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .summary-card .count {
+                font-size: 28px;
+                margin-bottom: 4px;
+            }
+
+            .ritual-item {
+                padding: 16px;
+                margin-bottom: 12px;
+            }
+
+            .ritual-item h4 {
+                font-size: 16px;
+                margin-bottom: 12px;
+                line-height: 1.3;
+            }
+
+            .ritual-item p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            #balance-feedback {
+                padding: 16px !important;
+                margin-top: 16px !important;
+                font-size: 14px;
+            }
+
+            .previous-summary, .suggestion {
+                padding: 16px;
+                margin-top: 16px;
+                font-size: 14px;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .header {
+                padding: 70px 16px 16px 16px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .content {
+                padding: 16px 12px;
+            }
+
+            .task-item {
+                padding: 10px;
+            }
+
+            .task-item span {
+                font-size: 13px;
+            }
+
+            .task-controls {
+                gap: 6px;
+            }
+
+            .assign-btn {
+                padding: 10px 6px;
+                font-size: 11px;
+            }
+
+            .partner input, .custom-task-input {
+                padding: 10px;
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+
+            .tabs {
+                width: 90vw;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .header {
+                padding: 60px 20px 16px 20px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .tasks-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -585,6 +691,7 @@
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
     <div class="container">
         <div class="header">
@@ -1112,23 +1219,35 @@
 
         function resetWeek() {
             if (confirm('Tem certeza que deseja zerar todas as atribuições da semana?')) {
+                // Save current week to history before resetting
                 const counts = { partner1: 0, partner2: 0, shared: 0 };
+                
                 Object.values(taskAssignments).forEach(assignment => {
                     if (counts[assignment] !== undefined) {
                         counts[assignment]++;
                     }
                 });
                 
-                history.push(counts);
+                // Only save to history if there are assignments
+                if (counts.partner1 > 0 || counts.partner2 > 0 || counts.shared > 0) {
+                    history.push(counts);
+                }
+                
+                // Clear all assignments
                 taskAssignments = {};
                 
+                // Remove visual classes from all task items
                 document.querySelectorAll('.task-item').forEach(item => {
                     item.classList.remove('assigned-partner1', 'assigned-partner2', 'assigned-shared');
                 });
                 
+                // Save data and update summary
                 saveData();
                 updateSummary();
-                alert('Semana zerada! Vá para o resumo para ver a sugestão para a próxima semana.');
+                
+                alert('Semana zerada com sucesso! As tarefas foram resetadas e a semana anterior foi salva no histórico.');
+                
+                // Go to summary to see the results
                 openTab('summary');
             }
         }
@@ -1163,7 +1282,29 @@
         }
 
         document.querySelector('.sidebar-toggle').addEventListener('click', () => {
-            document.querySelector('.tabs').classList.toggle('active');
+            const tabs = document.querySelector('.tabs');
+            const overlay = document.querySelector('.overlay');
+            
+            tabs.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking overlay
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('overlay')) {
+                document.querySelector('.tabs').classList.remove('active');
+                document.querySelector('.overlay').classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a tab
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.tabs').classList.remove('active');
+                    document.querySelector('.overlay').classList.remove('active');
+                }
+            });
         });
 
         document.addEventListener('DOMContentLoaded', () => {
