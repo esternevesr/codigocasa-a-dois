@@ -1,44 +1,4 @@
-[index.html](https://github.com/user-attachments/files/22085486/index.html)
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -179,10 +139,26 @@
             transition: var(--transition);
         }
 
-        .partner input:focus {
-            border-color: var(--primary);
+        .partner.partner1 input {
+            border-color: var(--accent1);
+        }
+
+        .partner.partner1 input:focus {
+            border-color: var(--accent1);
+            background: #fdf2f8;
             outline: none;
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+        }
+
+        .partner.partner2 input {
+            border-color: var(--accent2);
+        }
+
+        .partner.partner2 input:focus {
+            border-color: var(--accent2);
+            background: #eff6ff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
         }
 
         .tasks-grid {
@@ -319,7 +295,7 @@
             margin-top: 1.5rem;
         }
 
-        .ritual-item, .tip-item {
+        .ritual-item {
             background: var(--bg-white);
             padding: 1rem;
             border-radius: 0.5rem;
@@ -437,14 +413,14 @@
         <div id="setup" class="content active" role="tabpanel">
             <h2 style="text-align: center; color: var(--primary); margin-bottom: 1.5rem;">Vamos Começar! Configurem o Casal</h2>
             <div class="couple-setup">
-                <div class="partner">
+                <div class="partner partner1">
                     <h3>👤 Parceiro(a) 1</h3>
                     <input type="text" id="partner1-name" placeholder="Nome do primeiro parceiro(a)" onchange="updatePartnerNames()">
                     <input type="text" id="partner1-energy" placeholder="Melhor horário de energia (ex: manhã)">
                     <input type="text" id="partner1-preferences" placeholder="Tarefas que gosta de fazer">
                     <input type="text" id="partner1-dislikes" placeholder="Tarefas que prefere evitar">
                 </div>
-                <div class="partner">
+                <div class="partner partner2">
                     <h3>👤 Parceiro(a) 2</h3>
                     <input type="text" id="partner2-name" placeholder="Nome do segundo parceiro(a)" onchange="updatePartnerNames()">
                     <input type="text" id="partner2-energy" placeholder="Melhor horário de energia (ex: noite)">
