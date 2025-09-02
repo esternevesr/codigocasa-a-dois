@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -375,21 +375,32 @@
             top: 1rem;
             right: 1rem;
             z-index: 1000;
+            font-size: 1.2rem;
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+            }
+
             .tabs {
                 display: none;
                 flex-direction: column;
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 250px;
+                width: 280px;
                 height: 100%;
                 background: var(--bg-white);
-                box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
+                z-index: 999;
             }
 
             .tabs.active {
@@ -400,32 +411,160 @@
             .tab {
                 padding: 1.5rem;
                 border-bottom: 1px solid #e5e7eb;
+                text-align: left;
+                font-size: 1.1rem;
             }
 
             .sidebar-toggle {
                 display: block;
             }
 
-            .couple-setup, .tasks-grid, .summary-grid {
-                grid-template-columns: 1fr;
+            .header {
+                padding: 1.5rem 1rem;
+                margin-top: 0;
             }
 
             .header h1 {
                 font-size: 1.5rem;
             }
 
-            .navigation-buttons {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                border-radius: 0.5rem;
+            .header p {
+                font-size: 1rem;
             }
 
             .content {
                 padding: 1rem;
+            }
+
+            .couple-setup, .tasks-grid, .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .partner {
+                padding: 1rem;
+            }
+
+            .task-category {
+                padding: 1rem;
+            }
+
+            .task-item {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+                padding: 0.75rem;
+            }
+
+            .task-item span {
+                text-align: center;
+                font-weight: 500;
+            }
+
+            .task-controls {
+                justify-content: center;
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+
+            .assign-btn {
+                flex: 1;
+                min-width: 60px;
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-top: 1.5rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .summary-card {
+                padding: 1rem;
+            }
+
+            .ritual-item {
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .ritual-item h4 {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .ritual-item p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .content {
+                padding: 0.75rem;
+            }
+
+            .task-item {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .assign-btn {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+                min-width: 50px;
+            }
+
+            .task-controls {
+                gap: 0.5rem;
+            }
+
+            .partner input {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .custom-task-input {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .summary-card .count {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Better touch targets */
+        @media (max-width: 768px) {
+            .tab, .assign-btn, .nav-btn, .add-task-btn {
+                min-height: 44px;
             }
         }
 
