@@ -211,7 +211,7 @@
             background: linear-gradient(145deg, #eff6ff, #dbeafe);
         }
 
-        .task-item.shared {
+        .task-item.assigned-shared {
             border-color: var(--accent3);
             background: linear-gradient(145deg, #f0fdf4, #dcfce7);
         }
@@ -330,6 +330,38 @@
             margin-top: 0.75rem;
         }
 
+        .navigation-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--bg-white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(220, 38, 38, 0.2);
+        }
+
+        .nav-btn.secondary {
+            background: #6b7280;
+        }
+
+        .nav-btn.secondary:hover {
+            box-shadow: 0 10px 20px rgba(107, 114, 128, 0.2);
+        }
+
         /* Mobile Sidebar */
         .sidebar-toggle {
             display: none;
@@ -381,6 +413,10 @@
             .header h1 {
                 font-size: 1.5rem;
             }
+
+            .navigation-buttons {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
@@ -391,6 +427,22 @@
             .content {
                 padding: 1rem;
             }
+        }
+
+        .previous-summary {
+            margin-top: 20px;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            background: #f8f9ff;
+        }
+
+        .suggestion {
+            margin-top: 20px;
+            padding: 1rem;
+            border: 1px solid #22c55e;
+            border-radius: 0.5rem;
+            background: #f0fdf4;
         }
     </style>
 </head>
@@ -404,8 +456,8 @@
 
         <div class="tabs" role="tablist">
             <button class="tab active" role="tab" aria-selected="true" onclick="openTab('setup')">👫 Configuração</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="openTab('models')">📊 Modelo de Divisões</button>
             <button class="tab" role="tab" aria-selected="false" onclick="openTab('tasks')">📋 Tarefas</button>
-            <button class="tab" role="tab" aria-selected="false" onclick="openTab('templates')">📊 Exemplos de Divisões</button>
             <button class="tab" role="tab" aria-selected="false" onclick="openTab('summary')">📈 Resumo</button>
             <button class="tab" role="tab" aria-selected="false" onclick="openTab('rituals')">💖 Rituais</button>
         </div>
@@ -429,26 +481,15 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button class="add-task-btn" onclick="openTab('tasks')">Vamos Dividir as Tarefas! 🏠</button>
+                <button class="add-task-btn" onclick="openTab('models')">Ver Modelos de Divisão! 📊</button>
             </div>
         </div>
 
-        <div id="tasks" class="content" role="tabpanel">
-            <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Divisão de Tarefas - Visual e Justa</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
-                Clique nos botões ao lado de cada tarefa para atribuí-la. 
-                <span style="color: var(--accent1);">●</span> <span id="partner1-label">Parceiro 1</span> | 
-                <span style="color: var(--accent2);">●</span> <span id="partner2-label">Parceiro 2</span> | 
-                <span style="color: var(--accent3);">●</span> Compartilhada
-            </p>
-            <div class="tasks-grid" id="tasks-container"></div>
-        </div>
-
-        <div id="templates" class="content" role="tabpanel">
+        <div id="models" class="content" role="tabpanel">
             <div style="background: linear-gradient(145deg, #fef2f2, #fee2e2); border-radius: 0.75rem; padding: 1.5rem;">
-                <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">📊 Exemplos de Divisões para Diferentes Rotinas</h2>
+                <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">📊 Modelo de Divisões para Diferentes Rotinas</h2>
                 <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
-                    Planilhas e quadros visuais adaptáveis ao estilo de vida do casal.
+                    Escolha um modelo que faz sentido para a realidade do casal e depois personalize nas tarefas.
                 </p>
                 <div class="tasks-grid">
                     <div class="task-category">
@@ -460,7 +501,7 @@
                         <div class="task-item assigned-partner2">
                             <span>Noites: Jantar + organizar cozinha</span>
                         </div>
-                        <div class="task-item shared">
+                        <div class="task-item assigned-shared">
                             <span>Fins de semana: Limpeza geral juntos</span>
                         </div>
                         <div class="task-item assigned-partner1">
@@ -481,7 +522,7 @@
                         <div class="task-item assigned-partner2">
                             <span>Trabalha fora: Jantar + feira</span>
                         </div>
-                        <div class="task-item shared">
+                        <div class="task-item assigned-shared">
                             <span>Roupas: Divisão meio a meio</span>
                         </div>
                         <div class="task-item assigned-partner1">
@@ -496,7 +537,7 @@
                     <div class="task-category">
                         <h4>🏡 Modelo: Ambos em Casa</h4>
                         <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted);">Para casais que ficam em casa.</p>
-                        <div class="task-item shared">
+                        <div class="task-item assigned-shared">
                             <span>Cozinha: Alternar refeições</span>
                         </div>
                         <div class="task-item assigned-partner1">
@@ -505,7 +546,7 @@
                         <div class="task-item assigned-partner2">
                             <span>Roupas: Lavar e organizar</span>
                         </div>
-                        <div class="task-item shared">
+                        <div class="task-item assigned-shared">
                             <span>Compras: Planejar juntos</span>
                         </div>
                         <div class="task-item assigned-partner1">
@@ -523,6 +564,26 @@
                     <p style="margin-bottom: 10px;"><strong>4. Testem por 2 semanas</strong> antes de ajustar</p>
                     <p><strong>5. Sejam flexíveis:</strong> A vida muda, a divisão também pode mudar!</p>
                 </div>
+
+                <div class="navigation-buttons">
+                    <button class="nav-btn" onclick="openTab('tasks')">Personalizar Tarefas 📋</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tasks" class="content" role="tabpanel">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 1rem;">Divisão de Tarefas - Visual e Justa</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Clique nos botões ao lado de cada tarefa para atribuí-la. 
+                <span style="color: var(--accent1);">●</span> <span id="partner1-label">Parceiro 1</span> | 
+                <span style="color: var(--accent2);">●</span> <span id="partner2-label">Parceiro 2</span> | 
+                <span style="color: var(--accent3);">●</span> Compartilhada
+            </p>
+            <div class="tasks-grid" id="tasks-container"></div>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn" onclick="openTab('summary')">Ver Resumo 📈</button>
+                <button class="nav-btn secondary" onclick="resetWeek()">Zerar Semana</button>
             </div>
         </div>
 
@@ -547,6 +608,8 @@
                     </div>
                 </div>
                 <div id="balance-feedback" style="text-align: center; margin-top: 1.5rem; padding: 1rem; border-radius: 0.5rem;"></div>
+                <div class="previous-summary" id="previous-summary"></div>
+                <div class="suggestion" id="suggestion"></div>
             </div>
         </div>
 
@@ -655,33 +718,54 @@
         };
 
         let taskAssignments = {};
+        let history = [];
+
+        // Load saved data on page load
+        function loadSavedData() {
+            const savedAssignments = localStorage.getItem('taskAssignments');
+            const savedHistory = localStorage.getItem('taskHistory');
+            
+            if (savedAssignments) {
+                taskAssignments = JSON.parse(savedAssignments);
+            }
+            
+            if (savedHistory) {
+                history = JSON.parse(savedHistory);
+            }
+        }
+
+        // Save data to localStorage
+        function saveData() {
+            localStorage.setItem('taskAssignments', JSON.stringify(taskAssignments));
+            localStorage.setItem('taskHistory', JSON.stringify(history));
+        }
 
         const templateModels = {
             ambos_fora: {
-                'cozinha-0': 'partner1',    // Lavar louça
-                'cozinha-1': 'partner1',    // Cozinhar almoço
-                'cozinha-2': 'partner2',    // Cozinhar jantar
-                'cozinha-6': 'partner2',    // Fazer compras
-                'limpeza-0': 'shared',      // Aspirar/varrer
-                'limpeza-2': 'shared',      // Limpar banheiros
-                'roupas-0': 'partner1',     // Lavar roupa
-                'roupas-3': 'partner2',     // Dobrar roupas
+                'cozinha-0': 'partner1',
+                'cozinha-1': 'partner1',
+                'cozinha-2': 'partner2',
+                'cozinha-6': 'partner2',
+                'limpeza-0': 'shared',
+                'limpeza-2': 'shared',
+                'roupas-0': 'partner1',
+                'roupas-3': 'partner2'
             },
             um_fora: {
-                'cozinha-0': 'partner1',    // Lavar louça (em casa)
-                'cozinha-1': 'partner1',    // Almoço
-                'cozinha-2': 'partner2',    // Jantar (fora)
-                'cozinha-6': 'partner2',    // Compras
-                'limpeza-0': 'partner1',    // Limpeza diária
-                'roupas-0': 'shared',       // Roupas divididas
-                'administração-0': 'partner2' // Contas
+                'cozinha-0': 'partner1',
+                'cozinha-1': 'partner1',
+                'cozinha-2': 'partner2',
+                'cozinha-6': 'partner2',
+                'limpeza-0': 'partner1',
+                'roupas-0': 'shared',
+                'administração-0': 'partner2'
             },
             ambos_casa: {
-                'cozinha-1': 'shared',      // Alternar refeições
-                'limpeza-0': 'partner1',    // Áreas comuns
-                'roupas-0': 'partner2',     // Lavar e organizar
-                'cozinha-6': 'shared',      // Compras juntos
-                'administração-0': 'partner1' // Contas
+                'cozinha-1': 'shared',
+                'limpeza-0': 'partner1',
+                'roupas-0': 'partner2',
+                'cozinha-6': 'shared',
+                'administração-0': 'partner1'
             }
         };
 
@@ -689,25 +773,20 @@
             const template = templateModels[templateName];
             if (!template) return;
 
-            Object.keys(taskAssignments).forEach(taskId => {
-                const taskElement = document.getElementById(taskId);
-                if (taskElement) {
-                    taskElement.classList.remove('assigned-partner1', 'assigned-partner2', 'shared');
-                }
-            });
-            taskAssignments = {};
-
+            // Apply template assignments
             Object.entries(template).forEach(([taskId, assignment]) => {
+                taskAssignments[taskId] = assignment;
                 const taskElement = document.getElementById(taskId);
                 if (taskElement) {
+                    taskElement.classList.remove('assigned-partner1', 'assigned-partner2', 'assigned-shared');
                     taskElement.classList.add(`assigned-${assignment}`);
-                    taskAssignments[taskId] = assignment;
                 }
             });
 
+            saveData();
             updateSummary();
-            alert(`Modelo "${templateName}" aplicado! Vá para a aba Resumo para ver o resultado.`);
-            openTab('summary');
+            alert(`Modelo aplicado! Agora você pode personalizar as tarefas ou ir direto para o resumo.`);
+            openTab('tasks');
         }
 
         function openTab(tabName) {
@@ -724,6 +803,11 @@
             selectedTab.setAttribute('aria-selected', 'true');
 
             document.querySelector('.tabs').classList.remove('active');
+            
+            if (tabName === 'summary') {
+                updateSummary();
+                showPreviousSummaryAndSuggestion();
+            }
         }
 
         function updatePartnerNames() {
@@ -790,10 +874,33 @@
                 categoryDiv.appendChild(customInput);
                 container.appendChild(categoryDiv);
             });
+
+            // Apply saved assignments
+            loadSavedAssignments();
+        }
+
+        function loadSavedAssignments() {
+            Object.entries(taskAssignments).forEach(([taskId, assignment]) => {
+                const taskElement = document.getElementById(taskId);
+                if (taskElement) {
+                    taskElement.classList.remove('assigned-partner1', 'assigned-partner2', 'assigned-shared');
+                    taskElement.classList.add(`assigned-${assignment}`);
+                }
+            });
         }
 
         function addCustomTask(category, taskName) {
-            const categoryDiv = document.querySelector(`.task-category h4:contains('${category}')`).parentElement;
+            const categoryElements = document.querySelectorAll('.task-category h4');
+            let categoryDiv = null;
+            
+            categoryElements.forEach(element => {
+                if (element.textContent === category) {
+                    categoryDiv = element.parentElement;
+                }
+            });
+            
+            if (!categoryDiv) return;
+            
             const customInput = categoryDiv.querySelector('.custom-task-input');
             
             const taskId = `${category.toLowerCase()}-custom-${Date.now()}`;
@@ -817,7 +924,7 @@
 
         function assignTask(taskId, assignment) {
             const taskElement = document.getElementById(taskId);
-            taskElement.classList.remove('assigned-partner1', 'assigned-partner2', 'shared');
+            taskElement.classList.remove('assigned-partner1', 'assigned-partner2', 'assigned-shared');
             
             if (assignment !== 'none') {
                 taskElement.classList.add(`assigned-${assignment}`);
@@ -826,6 +933,7 @@
                 delete taskAssignments[taskId];
             }
             
+            saveData();
             updateSummary();
         }
 
@@ -833,7 +941,9 @@
             let counts = { partner1: 0, partner2: 0, shared: 0 };
 
             Object.values(taskAssignments).forEach(assignment => {
-                if (counts[assignment] !== undefined) counts[assignment]++;
+                if (counts[assignment] !== undefined) {
+                    counts[assignment]++;
+                }
             });
 
             document.getElementById('count-partner1').textContent = counts.partner1;
@@ -862,13 +972,67 @@
             }
         }
 
+        function resetWeek() {
+            if (confirm('Tem certeza que deseja zerar todas as atribuições da semana?')) {
+                const counts = { partner1: 0, partner2: 0, shared: 0 };
+                Object.values(taskAssignments).forEach(assignment => {
+                    if (counts[assignment] !== undefined) {
+                        counts[assignment]++;
+                    }
+                });
+                
+                history.push(counts);
+                taskAssignments = {};
+                
+                document.querySelectorAll('.task-item').forEach(item => {
+                    item.classList.remove('assigned-partner1', 'assigned-partner2', 'assigned-shared');
+                });
+                
+                saveData();
+                updateSummary();
+                alert('Semana zerada! Vá para o resumo para ver a sugestão para a próxima semana.');
+                openTab('summary');
+            }
+        }
+
+        function showPreviousSummaryAndSuggestion() {
+            const previousDiv = document.getElementById('previous-summary');
+            const suggestionDiv = document.getElementById('suggestion');
+            
+            if (history.length > 0) {
+                const lastWeek = history[history.length - 1];
+                previousDiv.innerHTML = `
+                    <h4>📅 Semana Passada:</h4>
+                    <p><strong>Parceiro 1:</strong> ${lastWeek.partner1} tarefas</p>
+                    <p><strong>Parceiro 2:</strong> ${lastWeek.partner2} tarefas</p>
+                    <p><strong>Compartilhadas:</strong> ${lastWeek.shared} tarefas</p>
+                `;
+                
+                let suggestionText = '';
+                if (lastWeek.partner1 > lastWeek.partner2 + 1) {
+                    suggestionText = 'Parceiro 2 pode assumir mais tarefas esta semana para equilibrar melhor.';
+                } else if (lastWeek.partner2 > lastWeek.partner1 + 1) {
+                    suggestionText = 'Parceiro 1 pode assumir mais tarefas esta semana para equilibrar melhor.';
+                } else {
+                    suggestionText = 'A divisão estava equilibrada! Podem manter ou trocar algumas tarefas para variar.';
+                }
+                
+                suggestionDiv.innerHTML = `<h4>💡 Sugestão para esta semana:</h4><p>${suggestionText}</p>`;
+            } else {
+                previousDiv.innerHTML = '<h4>📅 Semana Passada:</h4><p>Nenhuma semana anterior registrada.</p>';
+                suggestionDiv.innerHTML = '<h4>💡 Sugestão:</h4><p>Atribua tarefas e complete uma semana para receber sugestões personalizadas!</p>';
+            }
+        }
+
         document.querySelector('.sidebar-toggle').addEventListener('click', () => {
             document.querySelector('.tabs').classList.toggle('active');
         });
 
         document.addEventListener('DOMContentLoaded', () => {
+            loadSavedData();
             createTasksGrid();
             updateSummary();
+            updatePartnerNames();
         });
     </script>
 </body>
