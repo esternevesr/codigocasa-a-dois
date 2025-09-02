@@ -1,7 +1,5 @@
-# codigocasa-a-dois[Código Casa a Dois - Organização de Tarefas.html](https://github.com/user-attachments/files/22085463/Codigo.Casa.a.Dois.-.Organizacao.de.Tarefas.html)
-
-<!-- saved from url=(0043)file:///C:/Users/migue/Downloads/index.html -->
-<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+[index.html](https://github.com/user-attachments/files/22085486/index.html)
+<script type="text/javascript">
         var gk_isXlsx = false;
         var gk_xlsxFileLookup = {};
         var gk_fileData = {};
@@ -40,10 +38,10 @@
         }
         return gk_fileData[filename] || "";
         }
-        </script>
-
-
-    
+        </script><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Código Casa a Dois - Organização de Tarefas</title>
     <style>
@@ -419,7 +417,7 @@
             }
         }
     </style>
-<style type="text/css" id="operaUserStyle"></style></head>
+</head>
 <body>
     <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
     <div class="container">
@@ -429,11 +427,11 @@
         </div>
 
         <div class="tabs" role="tablist">
-            <button class="tab active" role="tab" aria-selected="true" onclick="openTab(&#39;setup&#39;)">👫 Configuração</button>
-            <button class="tab" role="tab" aria-selected="false" onclick="openTab(&#39;tasks&#39;)">📋 Tarefas</button>
-            <button class="tab" role="tab" aria-selected="false" onclick="openTab(&#39;templates&#39;)">📊 Exemplos de Divisões</button>
-            <button class="tab" role="tab" aria-selected="false" onclick="openTab(&#39;summary&#39;)">📈 Resumo</button>
-            <button class="tab" role="tab" aria-selected="false" onclick="openTab(&#39;rituals&#39;)">💖 Rituais</button>
+            <button class="tab active" role="tab" aria-selected="true" onclick="openTab('setup')">👫 Configuração</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="openTab('tasks')">📋 Tarefas</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="openTab('templates')">📊 Exemplos de Divisões</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="openTab('summary')">📈 Resumo</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="openTab('rituals')">💖 Rituais</button>
         </div>
 
         <div id="setup" class="content active" role="tabpanel">
@@ -455,7 +453,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button class="add-task-btn" onclick="openTab(&#39;tasks&#39;)">Vamos Dividir as Tarefas! 🏠</button>
+                <button class="add-task-btn" onclick="openTab('tasks')">Vamos Dividir as Tarefas! 🏠</button>
             </div>
         </div>
 
@@ -467,327 +465,7 @@
                 <span style="color: var(--accent2);">●</span> <span id="partner2-label">Parceiro 2</span> | 
                 <span style="color: var(--accent3);">●</span> Compartilhada
             </p>
-            <div class="tasks-grid" id="tasks-container"><div class="task-category"><h4>Cozinha</h4><div class="task-item" id="cozinha-0">
-                        <span>Lavar louça</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-0&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-0&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-0&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-0&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-1">
-                        <span>Cozinhar almoço</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-1&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-1&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-1&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-1&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-2">
-                        <span>Cozinhar jantar</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-2&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-2&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-2&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-2&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-3">
-                        <span>Limpar fogão</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-3&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-3&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-3&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-3&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-4">
-                        <span>Limpar geladeira</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-4&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-4&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-4&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-4&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-5">
-                        <span>Organizar armários</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-5&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-5&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-5&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-5&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-6">
-                        <span>Fazer compras do supermercado</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-6&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-6&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-6&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-6&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-7">
-                        <span>Preparar lanche</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-7&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-7&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-7&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-7&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="cozinha-8">
-                        <span>Lavar frutas e verduras</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;cozinha-8&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;cozinha-8&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;cozinha-8&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;cozinha-8&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><input type="text" class="custom-task-input" placeholder="Adicionar nova tarefa em Cozinha..."></div><div class="task-category"><h4>Limpeza</h4><div class="task-item" id="limpeza-0">
-                        <span>Aspirar/varrer casa</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-0&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-0&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-0&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-0&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-1">
-                        <span>Passar pano no chão</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-1&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-1&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-1&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-1&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-2">
-                        <span>Limpar banheiros</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-2&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-2&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-2&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-2&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-3">
-                        <span>Tirar pó dos móveis</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-3&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-3&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-3&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-3&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-4">
-                        <span>Limpar espelhos</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-4&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-4&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-4&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-4&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-5">
-                        <span>Organizar quartos</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-5&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-5&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-5&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-5&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-6">
-                        <span>Limpar janelas</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-6&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-6&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-6&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-6&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="limpeza-7">
-                        <span>Aspirar sofá e tapetes</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;limpeza-7&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;limpeza-7&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;limpeza-7&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;limpeza-7&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><input type="text" class="custom-task-input" placeholder="Adicionar nova tarefa em Limpeza..."></div><div class="task-category"><h4>Roupas</h4><div class="task-item" id="roupas-0">
-                        <span>Lavar roupa</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-0&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-0&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-0&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-0&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-1">
-                        <span>Estender roupa</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-1&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-1&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-1&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-1&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-2">
-                        <span>Recolher roupa seca</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-2&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-2&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-2&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-2&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-3">
-                        <span>Dobrar e guardar roupas</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-3&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-3&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-3&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-3&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-4">
-                        <span>Passar roupa</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-4&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-4&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-4&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-4&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-5">
-                        <span>Organizar guarda-roupa</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-5&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-5&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-5&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-5&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-6">
-                        <span>Separar roupas para lavar</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-6&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-6&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-6&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-6&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="roupas-7">
-                        <span>Lavar tênis e sapatos</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;roupas-7&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;roupas-7&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;roupas-7&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;roupas-7&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><input type="text" class="custom-task-input" placeholder="Adicionar nova tarefa em Roupas..."></div><div class="task-category"><h4>Área Externa</h4><div class="task-item" id="área externa-0">
-                        <span>Regar plantas</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-0&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-0&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-0&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-0&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-1">
-                        <span>Cuidar do jardim</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-1&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-1&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-1&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-1&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-2">
-                        <span>Limpar quintal/varanda</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-2&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-2&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-2&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-2&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-3">
-                        <span>Recolher lixo</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-3&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-3&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-3&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-3&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-4">
-                        <span>Cuidar de pets</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-4&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-4&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-4&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-4&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-5">
-                        <span>Lavar carro</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-5&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-5&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-5&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-5&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-6">
-                        <span>Organizar área de serviço</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-6&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-6&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-6&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-6&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="área externa-7">
-                        <span>Manutenção de equipamentos</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;área externa-7&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;área externa-7&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;área externa-7&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;área externa-7&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><input type="text" class="custom-task-input" placeholder="Adicionar nova tarefa em Área Externa..."></div><div class="task-category"><h4>Administração</h4><div class="task-item" id="administração-0">
-                        <span>Pagar contas</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-0&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-0&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-0&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-0&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="administração-1">
-                        <span>Organizar documentos</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-1&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-1&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-1&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-1&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="administração-2">
-                        <span>Controlar orçamento</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-2&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-2&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-2&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-2&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="administração-3">
-                        <span>Agendar consultas médicas</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-3&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-3&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-3&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-3&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="administração-4">
-                        <span>Resolver questões burocráticas</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-4&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-4&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-4&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-4&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="administração-5">
-                        <span>Planejamento de viagens</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-5&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-5&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-5&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-5&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><div class="task-item" id="administração-6">
-                        <span>Controle de investimentos</span>
-                        <div class="task-controls">
-                            <button class="assign-btn partner1" onclick="assignTask(&#39;administração-6&#39;, &#39;partner1&#39;)">P1</button>
-                            <button class="assign-btn partner2" onclick="assignTask(&#39;administração-6&#39;, &#39;partner2&#39;)">P2</button>
-                            <button class="assign-btn shared" onclick="assignTask(&#39;administração-6&#39;, &#39;shared&#39;)">Ambos</button>
-                            <button class="assign-btn clear" onclick="assignTask(&#39;administração-6&#39;, &#39;none&#39;)">×</button>
-                        </div>
-                    </div><input type="text" class="custom-task-input" placeholder="Adicionar nova tarefa em Administração..."></div></div>
+            <div class="tasks-grid" id="tasks-container"></div>
         </div>
 
         <div id="templates" class="content" role="tabpanel">
@@ -815,7 +493,7 @@
                         <div class="task-item assigned-partner2">
                             <span>Compras: Supermercado</span>
                         </div>
-                        <button class="add-task-btn" onclick="applyTemplate(&#39;ambos_fora&#39;)">Aplicar Este Modelo</button>
+                        <button class="add-task-btn" onclick="applyTemplate('ambos_fora')">Aplicar Este Modelo</button>
                     </div>
 
                     <div class="task-category">
@@ -836,7 +514,7 @@
                         <div class="task-item assigned-partner2">
                             <span>Trabalha fora: Contas + burocracias</span>
                         </div>
-                        <button class="add-task-btn" onclick="applyTemplate(&#39;um_fora&#39;)">Aplicar Este Modelo</button>
+                        <button class="add-task-btn" onclick="applyTemplate('um_fora')">Aplicar Este Modelo</button>
                     </div>
 
                     <div class="task-category">
@@ -857,7 +535,7 @@
                         <div class="task-item assigned-partner1">
                             <span>Administração: Contas</span>
                         </div>
-                        <button class="add-task-btn" onclick="applyTemplate(&#39;ambos_casa&#39;)">Aplicar Este Modelo</button>
+                        <button class="add-task-btn" onclick="applyTemplate('ambos_casa')">Aplicar Este Modelo</button>
                     </div>
                 </div>
 
@@ -892,7 +570,7 @@
                         <p>tarefas em dupla</p>
                     </div>
                 </div>
-                <div id="balance-feedback" style="text-align: center; margin-top: 1.5rem; padding: 1rem; border-radius: 0.5rem; background: rgb(245, 245, 245);"><p style="color: var(--text-muted);">Comece atribuindo algumas tarefas para ver o equilíbrio!</p></div>
+                <div id="balance-feedback" style="text-align: center; margin-top: 1.5rem; padding: 1rem; border-radius: 0.5rem;"></div>
             </div>
         </div>
 
@@ -1217,5 +895,5 @@
             updateSummary();
         });
     </script>
-
-</body></html>
+</body>
+</html>
